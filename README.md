@@ -37,11 +37,10 @@ Baseado no arquivo `PROMPT.md`:
 - ✅ Seções futuras separadas
 - ✅ Eliminação de duplicatas e formalidades
 
-## 📄 Exemplo de Transformação
+## 📄 Exemplo de Higienizaçao
 
-**Input**: [DiarioOficialNovaFriburgo_28072025.pdf](diarios/DiarioOficialNovaFriburgo_28072025.pdf) - Documento oficial com texto burocrático
-
-**Output**: Documento processado em `processed.md` - Tabelas estruturadas em linguagem simples
+[Diário oficial](diarios/DiarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo transformado em
+[Markdown](simplificados/DiarioOficialNovaFriburgo_28072025.md) simples.
 
 ## ⚙️ Configuração
 
