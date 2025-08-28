@@ -43,7 +43,7 @@ jobs:
           for pdf in diarios/*.pdf; do
             if [ -f "$pdf" ]; then
               filename=$(basename "$pdf" .pdf)
-              output_file="simplificados/${filename}.md"
+              output_file="higienizados/${filename}.md"
               if [ ! -f "$output_file" ]; then
                 python -m markitdown "$pdf" -o "$output_file"
                 echo "Converted: $pdf -> $output_file"
@@ -67,6 +67,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add docs/processed.md simplificados/
+          git add docs/processed.md higienizados/
           git diff --staged --quiet || git commit -m "chore(automation): processa diário oficial de $(date '+%Y-%m-%d %H:%M')"
           git push

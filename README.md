@@ -37,7 +37,7 @@ Tendo como resultado,
 ## 🎨 Resultado de Exemplo
 
 [Diário oficial](https://github.com/rafapolo/diarreia/blob/main/diarios/DIarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
-[Markdown](https://github.com/rafapolo/diarreia/blob/main/simplificados/DIarioOficialNovaFriburgo_28072025.md) simples.
+[Markdown](https://github.com/rafapolo/diarreia/blob/main/higienizados/DIarioOficialNovaFriburgo_28072025.md) simples.
 
 ## ⚙️ Configuração
 
@@ -46,18 +46,17 @@ Tendo como resultado,
 2. Commit e push para o repositório
 3. O GitHub Actions processará automaticamente:
    - Converte PDFs para markdown com [markitdown](https://github.com/microsoft/markitdown)
-   - Processa o PROMPT com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
-   - Publica no GitHub
-4. Resultados ficam disponíveis [aqui](https://github.com/rafapolo/diarreia/tree/main/simplificados)
+   - Processa o PROMPT na LLM com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
+   - Publica no GitHub [aqui](https://github.com/rafapolo/diarreia/tree/main/higienizados)
 
 ## 📁 Estrutura
 
 ```
 .
 ├── diarios/                 # Input: Arquivos PDF do Diário Oficial
-├── simplificados/           # Output: Documentos higienizados
-├── PROMPT.md               # Regras de transformação
-├── higieniza-diario.js     # Script de processamento com OpenRouter
+├── higienizados/            # Output: Documentos higienizados
+├── PROMPT.md                # Regras de transformação
+├── higieniza-diario.js      # Script de processamento com OpenRouter
 └── .github/workflows/
     └── process-diario.yml # Automação GitHub Actions
 ```

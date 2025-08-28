@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-    paths: [ 'simplificados/*.md' ]
+    paths: [ 'higienizados/*.md' ]
   workflow_dispatch:
 
 permissions:
@@ -27,11 +27,11 @@ jobs:
         run: |
           mkdir -p _site
           
-          # Find the latest .md file in simplificados/
-          LATEST_MD=$(find simplificados -name "*.md" -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -1 | cut -d' ' -f2-)
+          # Find the latest .md file in higienizados/
+          LATEST_MD=$(find higienizados -name "*.md" -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | tail -1 | cut -d' ' -f2-)
           
           if [ -z "$LATEST_MD" ]; then
-            echo "<h1>Nenhum diário simplificado encontrado</h1>" > _site/index.html
+            echo "<h1>Nenhum diário higienizado encontrado</h1>" > _site/index.html
             exit 0
           fi
           
@@ -44,14 +44,14 @@ jobs:
             <title>Redirecionando...</title>
           </head>
           <body>
-            <p>Redirecionando para o último diário simplificado...</p>
+            <p>Redirecionando para o último diário higienizado...</p>
             <p><a href="./$LATEST_MD">Clique aqui se não for redirecionado automaticamente</a></p>
           </body>
           </html>
           EOF
           
           # Copy the markdown files to _site
-          cp -r simplificados _site/
+          cp -r higienizados _site/
 
       - name: Commit and push site
         run: |

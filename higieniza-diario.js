@@ -7,17 +7,17 @@ async function processDocument() {
         // Read the prompt template
         const promptContent = fs.readFileSync('PROMPT.md', 'utf8');
 
-        // Read the latest markdown file from simplificados/
+        // Read the latest markdown file from higienizados/
         let documentContent = '';
-        const simplificadosDir = 'simplificados';
+        const higienizadosDir = 'higienizados';
 
-        if (fs.existsSync(simplificadosDir)) {
-            const files = fs.readdirSync(simplificadosDir)
+        if (fs.existsSync(higienizadosDir)) {
+            const files = fs.readdirSync(higienizadosDir)
                 .filter(file => file.endsWith('.md'))
                 .map(file => ({
                     name: file,
-                    path: path.join(simplificadosDir, file),
-                    mtime: fs.statSync(path.join(simplificadosDir, file)).mtime
+                    path: path.join(higienizadosDir, file),
+                    mtime: fs.statSync(path.join(higienizadosDir, file)).mtime
                 }))
                 .sort((a, b) => b.mtime - a.mtime);
 

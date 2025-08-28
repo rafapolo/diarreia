@@ -32,9 +32,9 @@ BODY=$(jq -n --arg prompt "$PROMPT" --arg input "$INPUT" \
   }')
 
 # Call OpenRouter API
-mkdir -p simplificados
+mkdir -p higienizados
 BASENAME=$(basename "$PDF_FILE" .pdf)
-OUTPUT_FILE="simplificados/${BASENAME}_simplificado.md"
+OUTPUT_FILE="higienizados/${BASENAME}_higienizado.md"
 
 curl -s -L \
   -H "Authorization: Bearer $OPENROUTER_API_KEY" \
