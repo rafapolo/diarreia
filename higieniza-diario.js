@@ -59,7 +59,7 @@ async function processDocument() {
         const timestamp = new Date().toLocaleString('pt-BR');
 
         console.log('✅ Documento processado com sucesso!');
-        console.log(`📄 Arquivo gerado: processed.md`);
+        console.log('📄 Arquivo gerado: processed.md');
         console.log(`🕒 Timestamp: ${timestamp}`);
 
     } catch (error) {
