@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "process": "node higieniza-diario.js"
+    "process": "node higieniza-diario.js",
+    "lint": "eslint *.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "homepage": "https://github.com/rafapolo/diarreia#readme",
   "dependencies": {
     "axios": "^1.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.34.0"
   }
 }
