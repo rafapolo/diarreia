@@ -1,8 +1,8 @@
 # Diário Oficial + IA ↦ Linguagem Simples
 
-Este projeto higieniza documentos burocráticos do Diário Oficial, transformando-os em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.
+This project cleans and structures bureaucratic documents from the Official Gazette into accessible, easy-to-read tables, promoting transparency and participatory democracy through plain language principles.
 
-A disponibilização do Diário Oficial em formato estruturado e acessível é fundamental para fortalecer a transparência pública e a democracia participativa.
+Este projeto higieniza e estrutura documentos burocráticos do Diário Oficial em tabelas acessíveis e de fácil leitura, promovendo a transparência e a democracia participativa por meio dos princípios da linguagem simples.
 
 ## 🎯 Objetivo
 
