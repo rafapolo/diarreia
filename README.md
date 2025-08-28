@@ -1,3 +1,6 @@
+<img src="docs/logo.png" alt="logo" width="300"/>
+
+
 # Diário Oficial + IA ↦ Linguagem Simples
 
 This project cleans and structures bureaucratic documents from the Official Gazette into accessible, easy-to-read tables, promoting transparency and participatory democracy through plain language principles.
