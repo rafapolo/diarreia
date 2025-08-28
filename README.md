@@ -37,8 +37,8 @@ Executa o [PROMPT](PROMPT.md) no Modelo Largo de Línguagem:
 3. O GitHub Actions processará automaticamente:
    - Converte PDFs para markdown com [markitdown](https://github.com/microsoft/markitdown)
    - Processa o PROMPT com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
-   - Publica no GitHub Pages
-4. Resultado fica disponível [aqui](https://github.com/rafapolo/diarreia/tree/main/simplificados)
+   - Publica no GitHub
+4. Resultados ficam disponíveis [aqui](https://github.com/rafapolo/diarreia/tree/main/simplificados)
 
 ## 📁 Estrutura
 
