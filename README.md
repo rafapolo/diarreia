@@ -62,8 +62,8 @@ Baseado no arquivo `PROMPT.md`:
 
 ## 🎨 Resultado de Exemplo
 
-[Diário oficial](diarios/DiarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
-[Markdown](simplificados/DiarioOficialNovaFriburgo_28072025.md) simples.
+[Diário oficial](https://github.com/rafapolo/diarreia/blob/main/diarios/DIarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
+[Markdown](https://github.com/rafapolo/diarreia/blob/main/simplificados/DIarioOficialNovaFriburgo_28072025.md) simples.
 
 ---
 
