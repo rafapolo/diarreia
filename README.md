@@ -6,7 +6,7 @@ A disponibilização do Diário Oficial em formato estruturado e acessível é f
 
 ## 🎯 Objetivo
 
-Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas por data, com informações claras sobre:
+Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas e higienizadas utilizando só ferramentas gratuitas.
 
 - **Quem**: Pessoa/empresa envolvida
 - **Onde**: Local/endereço
@@ -59,7 +59,7 @@ Baseado no arquivo `PROMPT.md`:
 ```
 .
 ├── diarios/                 # Input: arquivos PDF do Diário Oficial
-├── simplificados/           # Output: Documento higienizado
+├── simplificados/           # Output: Documento higienizado automaticamente
 ├── PROMPT.md               # Regras de transformação
 ├── higieniza-diario.js     # Script de processamento com OpenRouter
 └── .github/workflows/
