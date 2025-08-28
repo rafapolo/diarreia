@@ -1,0 +1,27 @@
+{
+  "name": "diarreia",
+  "version": "1.0.0",
+  "description": "Este projeto higieniza documentos burocráticos do Diário Oficial, os limpando em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.",
+  "main": "higieniza-diario.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafapolo/diarreia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rafapolo/diarreia/issues"
+  },
+  "homepage": "https://github.com/rafapolo/diarreia#readme",
+  "dependencies": {
+    "axios": "^1.11.0"
+  }
+}

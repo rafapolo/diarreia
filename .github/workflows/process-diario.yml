@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -59,6 +59,80 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           node higieniza-diario.js
+      
+      - name: Create docs directory for GitHub Pages
+        run: |
+          mkdir -p docs
+          cp processed.md docs/
+          cp -r simplificados docs/ 2>/dev/null || true
+          
+          # Create index.html that lists all markdown files
+          cat > docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="pt-BR">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>DiarreIA - Documentos Processados</title>
+              <style>
+                  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 40px; }
+                  h1 { color: #333; }
+                  .file-list { list-style: none; padding: 0; }
+                  .file-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
+                  .file-list a { text-decoration: none; color: #0366d6; }
+                  .file-list a:hover { text-decoration: underline; }
+                  .timestamp { color: #666; font-size: 0.9em; }
+              </style>
+          </head>
+          <body>
+              <h1>🚽 DiarreIA - Documentos Processados</h1>
+              <p>Diários Oficiais higienizados em linguagem simples</p>
+              
+              <h2>📄 Documento Processado Principal</h2>
+              <ul class="file-list">
+                  <li><a href="processed.md">processed.md</a> - Documento mais recente processado</li>
+              </ul>
+              
+              <h2>📂 Conversões PDF → Markdown</h2>
+              <ul class="file-list" id="markdown-files">
+                  <li>Carregando arquivos...</li>
+              </ul>
+              
+              <div class="timestamp">
+                  Última atualização: $(date '+%d/%m/%Y %H:%M')
+              </div>
+              
+              <script>
+                  // List markdown files dynamically
+                  fetch('./simplificados/')
+                      .then(response => response.text())
+                      .then(html => {
+                          const parser = new DOMParser();
+                          const doc = parser.parseFromString(html, 'text/html');
+                          const links = doc.querySelectorAll('a[href$=".md"]');
+                          const markdownList = document.getElementById('markdown-files');
+                          
+                          if (links.length === 0) {
+                              markdownList.innerHTML = '<li>Nenhum arquivo markdown encontrado</li>';
+                          } else {
+                              markdownList.innerHTML = '';
+                              links.forEach(link => {
+                                  const li = document.createElement('li');
+                                  const a = document.createElement('a');
+                                  a.href = './simplificados/' + link.getAttribute('href');
+                                  a.textContent = link.textContent;
+                                  li.appendChild(a);
+                                  markdownList.appendChild(li);
+                              });
+                          }
+                      })
+                      .catch(() => {
+                          document.getElementById('markdown-files').innerHTML = '<li>Erro ao carregar lista de arquivos</li>';
+                      });
+              </script>
+          </body>
+          </html>
+          EOF
       
       - name: Setup Pages
         uses: actions/configure-pages@v4

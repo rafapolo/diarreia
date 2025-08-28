@@ -1,11 +1,6 @@
-# DiarreIA: Diário Oficial + IA ↦ Linguagem Simples
+# Diário Oficial + IA ↦ Linguagem Simples
 
-🚽 Limpando a cagada burocrática
-💼 Higienizando o Diário Oficial
-
-🗂️ **Transformando burocracia em clareza**
-
-Este projeto automatiza a conversão do Diário Oficial brasileiros em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.
+Este projeto higieniza documentos burocráticos do Diário Oficial, transformando-os em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.
 
 A disponibilização do Diário Oficial em formato estruturado e acessível é fundamental para fortalecer a transparência pública e a democracia participativa.
 
@@ -42,6 +37,12 @@ Baseado no arquivo `PROMPT.md`:
 - ✅ Seções futuras separadas
 - ✅ Eliminação de duplicatas e formalidades
 
+## 📄 Exemplo de Transformação
+
+**Input**: [DiarioOficialNovaFriburgo_28072025.pdf](diarios/DiarioOficialNovaFriburgo_28072025.pdf) - Documento oficial com texto burocrático
+
+**Output**: Documento processado em `processed.md` - Tabelas estruturadas em linguagem simples
+
 ## ⚙️ Configuração
 
 ### 3. Como Usar
@@ -58,11 +59,9 @@ Baseado no arquivo `PROMPT.md`:
 ```
 .
 ├── diarios/                 # Input: arquivos PDF do Diário Oficial
-├── simplificados/           # Markdown convertido dos PDFs
+├── simplificados/           # Output: Documento higienizado
 ├── PROMPT.md               # Regras de transformação
-├── higieniza-diario.js     # Script de processamento OpenRouter
-├── docs/
-│   └── processed.md       # Output: resultado processado
+├── higieniza-diario.js     # Script de processamento com OpenRouter
 └── .github/workflows/
     └── process-diario.yml # Automação GitHub Actions
 ```

@@ -53,18 +53,13 @@ async function processDocument() {
         // Extract the processed content
         const processedContent = response.data.choices[0].message.content;
 
-        // Ensure docs directory exists
-        if (!fs.existsSync('docs')) {
-            fs.mkdirSync('docs', { recursive: true });
-        }
-
-        // Write the processed content to docs/processed.md
-        fs.writeFileSync('docs/processed.md', processedContent, 'utf8');
+        // Write the processed content to processed.md
+        fs.writeFileSync('processed.md', processedContent, 'utf8');
 
         const timestamp = new Date().toLocaleString('pt-BR');
 
         console.log('✅ Documento processado com sucesso!');
-        console.log(`📄 Arquivo gerado: docs/processed.md`);
+        console.log(`📄 Arquivo gerado: processed.md`);
         console.log(`🕒 Timestamp: ${timestamp}`);
 
     } catch (error) {
@@ -92,12 +87,7 @@ Por favor, verifique:
 ---
 `;
 
-        // Ensure docs directory exists
-        if (!fs.existsSync('docs')) {
-            fs.mkdirSync('docs', { recursive: true });
-        }
-
-        fs.writeFileSync('docs/processed.md', fallbackContent, 'utf8');
+        fs.writeFileSync('processed.md', fallbackContent, 'utf8');
 
         process.exit(1);
     }
