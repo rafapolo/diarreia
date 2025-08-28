@@ -17,17 +17,9 @@ Converter textos complexos e burocráticos do Diário Oficial em tabelas organiz
 - **Base Legal**: Fundamentação jurídica
 - **Link**: Acesso ao documento oficial
 
-## 🚀 Como funciona
+## 📋 Regras de Higienização
 
-1. **Input**: Arquivos PDF na pasta `diarios/`
-2. **Conversão**: Markitdown converte PDFs para markdown na pasta `simplificados/`
-3. **Processamento**: OpenRouter API (GPT free model) extrai e estrutura as informações
-4. **Output**: Tabelas Markdown organizadas por data
-5. **Publicação**: GitHub Pages exibe o resultado automaticamente
-
-## 📋 Regras de Processamento
-
-Baseado no arquivo `PROMPT.md`:
+Executa o [PROMPT](PROMPT.md) no Modelo Largo de Línguagem:
 
 - ✅ Agrupamento por data
 - ✅ Tabelas com colunas padronizadas
@@ -44,9 +36,9 @@ Baseado no arquivo `PROMPT.md`:
 2. Commit e push para o repositório
 3. O GitHub Actions processará automaticamente:
    - Converte PDFs para markdown com [markitdown](https://github.com/microsoft/markitdown)
-   - Processa o [PROMPT](PROMPT.md) com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
+   - Processa o PROMPT com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
    - Publica no GitHub Pages
-4. Resultado fica disponível [aqui](https://rafapolo.github.io/diarreia/)
+4. Resultado fica disponível [aqui](https://github.com/rafapolo/diarreia/tree/main/simplificados)
 
 ## 📁 Estrutura
 
