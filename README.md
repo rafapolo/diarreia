@@ -37,11 +37,6 @@ Baseado no arquivo `PROMPT.md`:
 - ✅ Seções futuras separadas
 - ✅ Eliminação de duplicatas e formalidades
 
-## 📄 Exemplo de Higienizaçao
-
-[Diário oficial](diarios/DiarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo transformado em
-[Markdown](simplificados/DiarioOficialNovaFriburgo_28072025.md) simples.
-
 ## ⚙️ Configuração
 
 ### 3. Como Usar
@@ -65,13 +60,10 @@ Baseado no arquivo `PROMPT.md`:
     └── process-diario.yml # Automação GitHub Actions
 ```
 
-## 🎨 Exemplo de Resultado
+## 🎨 Resultado de Exemplo
 
-### 28/07/2025
-
-| Quem | Onde | Tipo | Nº | Valor (R$) | Contexto | Base Legal | Link |
-|---|---|---|---|---|---|---|---|
-| WW PADUA VEICULOS | Alberto Braune | Licitação | 90.060 | 93.800,00 | Aquisição de veículo Polo Track | Lei 14.133/2021 | [Link](http://www.pmnf.rj.gov.br/) |
+[Diário oficial](diarios/DiarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
+[Markdown](simplificados/DiarioOficialNovaFriburgo_28072025.md) simples.
 
 ---
 
