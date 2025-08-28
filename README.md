@@ -1,4 +1,4 @@
-<img src="docs/logo.png" alt="logo" width="300"/>
+<img src="docs/logo.png" alt="logo" width="200"/>
 
 
 # Diário Oficial + IA ↦ Linguagem Simples
@@ -9,7 +9,21 @@ Este projeto higieniza e estrutura documentos burocráticos do Diário Oficial e
 
 ## 🎯 Objetivo
 
-Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas e higienizadas utilizando somente ferramentas gratuitas.
+Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas e higienizadas utilizando um Modelo Largo de Linguagem.
+
+## 📋 Higienização
+
+Executa o [PROMPT](PROMPT.md) no LLM requisitando
+
+- ✅ Agrupamento por data
+- ✅ Tabelas com colunas padronizadas
+- ✅ Valores monetários em formato brasileiro
+- ✅ Contexto em linguagem simples
+- ✅ Links oficiais preservados
+- ✅ Seções futuras separadas
+- ✅ Eliminação de duplicatas e formalidades
+
+Tendo como resultado,
 
 - **Quem**: Pessoa/empresa envolvida
 - **Onde**: Local/endereço
@@ -20,17 +34,10 @@ Converter textos complexos e burocráticos do Diário Oficial em tabelas organiz
 - **Base Legal**: Fundamentação jurídica
 - **Link**: Acesso ao documento oficial
 
-## 📋 Regras de Higienização
+## 🎨 Resultado de Exemplo
 
-Executa o [PROMPT](PROMPT.md) no Modelo Largo de Línguagem:
-
-- ✅ Agrupamento por data
-- ✅ Tabelas com colunas padronizadas
-- ✅ Valores monetários em formato brasileiro
-- ✅ Contexto em linguagem simples
-- ✅ Links oficiais preservados
-- ✅ Seções futuras separadas
-- ✅ Eliminação de duplicatas e formalidades
+[Diário oficial](https://github.com/rafapolo/diarreia/blob/main/diarios/DIarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
+[Markdown](https://github.com/rafapolo/diarreia/blob/main/simplificados/DIarioOficialNovaFriburgo_28072025.md) simples.
 
 ## ⚙️ Configuração
 
@@ -54,11 +61,6 @@ Executa o [PROMPT](PROMPT.md) no Modelo Largo de Línguagem:
 └── .github/workflows/
     └── process-diario.yml # Automação GitHub Actions
 ```
-
-## 🎨 Resultado de Exemplo
-
-[Diário oficial](https://github.com/rafapolo/diarreia/blob/main/diarios/DIarioOficialNovaFriburgo_28072025.pdf) de Nova Friburgo higienizado em
-[Markdown](https://github.com/rafapolo/diarreia/blob/main/simplificados/DIarioOficialNovaFriburgo_28072025.md) simples.
 
 ---
 
