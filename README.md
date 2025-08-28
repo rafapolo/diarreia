@@ -6,7 +6,7 @@ A disponibilização do Diário Oficial em formato estruturado e acessível é f
 
 ## 🎯 Objetivo
 
-Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas e higienizadas utilizando só ferramentas gratuitas.
+Converter textos complexos e burocráticos do Diário Oficial em tabelas organizadas e higienizadas utilizando somente ferramentas gratuitas.
 
 - **Quem**: Pessoa/empresa envolvida
 - **Onde**: Local/endereço
@@ -43,17 +43,17 @@ Baseado no arquivo `PROMPT.md`:
 1. Adicione arquivos PDF do Diário Oficial na pasta `diarios/`
 2. Commit e push para o repositório
 3. O GitHub Actions processará automaticamente:
-   - Converte PDFs para markdown (pasta `simplificados/`)
-   - Processa com OpenRouter API (gratuito)
-   - Publica no GitHub Pages (gratuito)
-4. Resultado estará disponível no GitHub Pages
+   - Converte PDFs para markdown com [markitdown](https://github.com/microsoft/markitdown)
+   - Processa o [PROMPT](PROMPT.md) com [OpenRouter](https://openrouter.ai/openai/gpt-oss-20b:free]gpt-oss-20b:free)
+   - Publica no GitHub Pages
+4. Resultado fica disponível [aqui](https://rafapolo.github.io/diarreia/)
 
 ## 📁 Estrutura
 
 ```
 .
-├── diarios/                 # Input: arquivos PDF do Diário Oficial
-├── simplificados/           # Output: Documento higienizado automaticamente
+├── diarios/                 # Input: Arquivos PDF do Diário Oficial
+├── simplificados/           # Output: Documentos higienizados
 ├── PROMPT.md               # Regras de transformação
 ├── higieniza-diario.js     # Script de processamento com OpenRouter
 └── .github/workflows/
