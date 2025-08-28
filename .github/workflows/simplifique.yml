@@ -1,0 +1,32 @@
+# .github/workflows/hf-inference.yml
+name: HF Inference (free)
+on: [workflow_dispatch]
+
+jobs:
+  call-llm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Query HF Hosted Inference API and save Markdown
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}   # create this in repo settings
+          MODEL_ID: 'microsoft/Phi-3-mini-128k-instruct'
+        run: |
+          PROMPT='Summarize README.md in Markdown with a bullet list of key points.'
+          INPUT=$(jq -Rs . < README.md)
+          BODY=$(jq -n --arg i "$INPUT" --arg p "$PROMPT" \
+            '{inputs: ($p + "\n\n" + "==== FILE ====\n" + $i)}')
+
+          curl -s -L \
+            -H "Authorization: Bearer $HF_TOKEN" \
+            -H "Content-Type: application/json" \
+            https://api-inference.huggingface.co/models/$MODEL_ID \
+            -d "$BODY" \
+          | jq -r '.[0].generated_text // .generated_text' > llm_output.md
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: llm-output
+          path: llm_output.md
+

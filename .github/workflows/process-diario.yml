@@ -1,0 +1,73 @@
+name: Process Diário Oficial
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'diarios/*.pdf'
+      - 'PROMPT.md'
+      - '.github/workflows/process-diario.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  process-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install axios
+          pip install markitdown
+      
+      - name: Convert PDFs to markdown
+        run: |
+          for pdf in diarios/*.pdf; do
+            if [ -f "$pdf" ]; then
+              filename=$(basename "$pdf" .pdf)
+              output_file="simplificados/${filename}.md"
+              if [ ! -f "$output_file" ]; then
+                python -m markitdown "$pdf" -o "$output_file"
+                echo "Converted: $pdf -> $output_file"
+              else
+                echo "Skipped: $output_file already exists"
+              fi
+            fi
+          done
+      
+      - name: Process document with OpenRouter
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          node higieniza-diario.js
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

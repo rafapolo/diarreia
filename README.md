@@ -1,8 +1,13 @@
-# Diário Oficial - Linguagem Simples
+# DiarreIA: Diário Oficial + IA ↦ Linguagem Simples
+
+🚽 Limpando a cagada burocrática
+💼 Higienizando o Diário Oficial
 
 🗂️ **Transformando burocracia em clareza**
 
-Este projeto automatiza a conversão do Diário Oficial de Nova Friburgo em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.
+Este projeto automatiza a conversão do Diário Oficial brasileiros em tabelas estruturadas e de fácil leitura, seguindo os princípios da linguagem simples.
+
+A disponibilização do Diário Oficial em formato estruturado e acessível é fundamental para fortalecer a transparência pública e a democracia participativa.
 
 ## 🎯 Objetivo
 
@@ -19,10 +24,11 @@ Converter textos complexos e burocráticos do Diário Oficial em tabelas organiz
 
 ## 🚀 Como funciona
 
-1. **Input**: Arquivo `document.txt` com conteúdo do Diário Oficial
-2. **Processamento**: OpenRouter API (GPT free model) extrai e estrutura as informações
-3. **Output**: Tabelas Markdown organizadas por data
-4. **Publicação**: GitHub Pages exibe o resultado automaticamente
+1. **Input**: Arquivos PDF na pasta `diarios/`
+2. **Conversão**: Markitdown converte PDFs para markdown na pasta `simplificados/`
+3. **Processamento**: OpenRouter API (GPT free model) extrai e estrutura as informações
+4. **Output**: Tabelas Markdown organizadas por data
+5. **Publicação**: GitHub Pages exibe o resultado automaticamente
 
 ## 📋 Regras de Processamento
 
@@ -38,36 +44,27 @@ Baseado no arquivo `PROMPT.md`:
 
 ## ⚙️ Configuração
 
-### 1. API Key OpenRouter
-1. Acesse [OpenRouter.ai](https://openrouter.ai/)
-2. Crie uma conta gratuita
-3. Obtenha sua API Key
-4. No GitHub, vá em **Settings** → **Secrets and Variables** → **Actions**
-5. Adicione um novo secret: `OPENROUTER_API_KEY` com sua chave
-
-### 2. GitHub Pages
-1. Vá em **Settings** → **Pages**
-2. Source: **GitHub Actions**
-3. O site será publicado automaticamente em: `https://[seu-usuario].github.io/[nome-do-repo]/`
-
 ### 3. Como Usar
-1. Adicione o texto do Diário Oficial no arquivo `document.txt`
+1. Adicione arquivos PDF do Diário Oficial na pasta `diarios/`
 2. Commit e push para o repositório
-3. O GitHub Actions processará automaticamente
+3. O GitHub Actions processará automaticamente:
+   - Converte PDFs para markdown (pasta `simplificados/`)
+   - Processa com OpenRouter API (gratuito)
+   - Publica no GitHub Pages (gratuito)
 4. Resultado estará disponível no GitHub Pages
 
 ## 📁 Estrutura
 
 ```
 .
-├── document.txt              # Input: texto do Diário Oficial
-├── PROMPT.md                # Regras de transformação
-├── process-document.js      # Script de processamento OpenRouter
+├── diarios/                 # Input: arquivos PDF do Diário Oficial
+├── simplificados/           # Markdown convertido dos PDFs
+├── PROMPT.md               # Regras de transformação
+├── higieniza-diario.js     # Script de processamento OpenRouter
 ├── docs/
-│   ├── index.html          # Interface web
-│   └── processed.md        # Output: resultado processado
+│   └── processed.md       # Output: resultado processado
 └── .github/workflows/
-    └── process-diario.yml  # Automação GitHub Actions
+    └── process-diario.yml # Automação GitHub Actions
 ```
 
 ## 🎨 Exemplo de Resultado
